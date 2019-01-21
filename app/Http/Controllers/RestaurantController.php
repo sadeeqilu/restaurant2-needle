@@ -14,7 +14,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+      $posts = DB::table('restaurants')->get();
+      return view('welcome', compact('restaurants'));
     }
 
     /**
@@ -24,7 +25,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,9 +34,16 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function saveNewRestaurant(Request $request)
     {
-        //
+      $restaurant = new Restaurant([
+        'restaurant_name' => $request['restaurant_name'],
+        'location' => $request['location'],
+        'phonenumber' => $request['phonenumber'],
+      ]);
+
+      $restaurant->save();
+      return redirect()->back()->with('success', 'Added successfully');
     }
 
     /**
@@ -44,9 +52,9 @@ class RestaurantController extends Controller
      * @param  \App\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurant $restaurant)
+    public function show()
     {
-        //
+        return view('restaurantPages.restaurant');
     }
 
     /**

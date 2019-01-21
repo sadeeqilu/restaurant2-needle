@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
-
+@include('include.navbar')
+<script>
+  document.querySelector('#home').classList.add('active');
+</script>
             <section class="page-section clearfix">
               <div class="container">
                 <div class="intro">
@@ -37,5 +39,7 @@
                 </div>
               </div>
             </section>
+
+
 
 @endsection

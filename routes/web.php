@@ -16,24 +16,52 @@ Route::get('/', function () {
 });
 
 Route::get('/restaurants', [
-    'uses' => 'RestaurantsController@showRestaurants',
-    'as' => 'showRestaurants'
+    'uses' => 'mainPageController@showMainPage',
+    'as' => 'showMainPage'
 ]);
 
 Route::get('/foods', [
-    'uses' => 'RestaurantsController@showFoods',
+    'uses' => 'mainPageController@showFoods',
     'as' => 'showFoods'
 ]);
 
 Route::get('/drinks', [
-  'uses' => 'RestaurantsController@showDrinks',
+  'uses' => 'mainPageController@showDrinks',
   'as' => 'showDrinks'
 ]);
 
 Route::get('/about', [
-  'uses' => 'RestaurantsController@showAbout',
+  'uses' => 'mainPageController@showAbout',
   'as' => 'showAbout'
 ]);
+
+Route::get('/show', [
+  'uses' => 'RestaurantController@show',
+  'as' => 'show'
+]);
+
+Route::post('/saveNewRestaurant', [
+  'uses' => 'RestaurantController@saveNewRestaurant',
+  'as' => 'saveNewRestaurant'
+]);
+
+Route::get('/showRestaurateur', [
+  'uses' => 'RestaurateurController@showRestaurateur',
+  'as' => 'showRestaurateur'
+]);
+
+Route::post('/saveNewRestaurateur', [
+  'uses' => 'RestaurateurController@saveNewRestaurateur',
+  'as' => 'saveNewRestaurateur'
+]);
+
+Route::resource('Item', 'ItemController');
+
+Route::resource('Restaurant', 'RestaurantsController');
+
+Route::resource('Restaurateur', 'RestaurateurController');
+
+Route::resource('Order', 'OrderController');
 
 Auth::routes();
 

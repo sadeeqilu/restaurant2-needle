@@ -18,7 +18,6 @@ class CreateRestaurantsTable extends Migration
             $table->string('restaurant_name');
             $table->string('location');
             $table->string('phonenumber');
-            $table-
             $table->timestamps();
         });
     }

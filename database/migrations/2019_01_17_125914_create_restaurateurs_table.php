@@ -15,6 +15,9 @@ class CreateRestaurateursTable extends Migration
     {
         Schema::create('restaurateurs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('phonenumber');
             $table->timestamps();
         });
     }

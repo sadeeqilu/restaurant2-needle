@@ -2,6 +2,10 @@
 
 @section('content')
 
+@include('include.navbar')
+<script>
+  document.querySelector('#about').classList.add('active');
+</script>
     <section class="page-section about-heading">
       <div class="container">
         <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
@@ -22,9 +26,4 @@
       </div>
     </section>
 
-    <footer class="footer text-faded text-center py-5">
-      <div class="container">
-        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
-      </div>
-    </footer>
 @endsection

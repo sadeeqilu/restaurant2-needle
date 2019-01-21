@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RestaurantsController extends Controller
+class mainPageController extends Controller
 {
-    public function showRestaurants()
+    public function showMainPage()
     {
         return view('restaurants');
     }

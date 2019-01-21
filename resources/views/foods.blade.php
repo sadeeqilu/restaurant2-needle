@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+@include('include.navbar')
+<script>
+  document.querySelector('#foods').classList.add('active');
+</script>
 
     <section class="page-section">
       <div class="container">
@@ -65,9 +69,4 @@
       </div>
     </section>
 
-    <footer class="footer text-faded text-center py-5">
-      <div class="container">
-        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
-      </div>
-    </footer>
 @endsection

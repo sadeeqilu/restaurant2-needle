@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Restaurateur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RestaurateurController extends Controller
 {
+
+
+    public function saveNewRestaurateur(Request $req){
+      $restaurateur = new Restaurateur([
+          'firstName' => $req['firstName'],
+          'lastName' => $req['lastName'],
+          'phonenumber' => $req['phonenumber']
+      ]);
+
+      $restaurateur->save();
+      return redirect()->back()->with('success', 'Congratulations, We will confirm and contact you soon...');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,9 +58,9 @@ class RestaurateurController extends Controller
      * @param  \App\Restaurateur  $restaurateur
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurateur $restaurateur)
+    public function showRestaurateur()
     {
-        //
+        return view('restaurateurPages.restaurateur');
     }
 
     /**
